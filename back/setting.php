@@ -1,4 +1,13 @@
 <?php
-$base_url = "http://192.168.0.105/"
+
+//Base settings
+$base_url = "http://localhost/";
+
+//DB MySQL settings
+$db_name = "";
+$db_user = "";
+$db_pass = "";
+
+//
 
 ?>

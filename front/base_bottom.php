@@ -41,7 +41,7 @@
 		</div>
 		<div class="row footer f-line2">
 			<div class="col-md-6">
-				<p class="footer-p">Copyright GreatView.ru</p>
+				<p class="footer-p">Copyright GreatView.ru 2016 - <?php echo date("Y"); ?></p>
 			</div>
 			<div class="col-md-6 text-right">
 				<ul class="footer-rules">
