@@ -1,0 +1,41 @@
+/*
+font-family: 'PT Sans', sans-serif;
+font-family: 'Merriweather', serif;
+*/
+h1{
+	font-weight: 700;
+	font-size: 31pt;
+	font-family: 'PT Sans', sans-serif;
+}
+h2{
+	font-weight: 700;
+	font-size: 42pt;
+	word-spacing: 48pt;
+	font-family: 'PT Sans', sans-serif;
+}
+h3{
+	font-weight: 400;
+	font-size: 20pt;
+	word-spacing: 28pt;
+	font-family: 'PT Sans', sans-serif;
+}
+h4{
+	font-weight: 400;
+	font-size: 16pt;
+	font-family: 'PT Sans', sans-serif;
+}
+p{
+	font-size: 16px;
+	font-family: 'Merriweather', serif;
+	font-weight: 400;
+}
+p.p2{
+	font-size: 16pt;
+	font-weight: 400;
+	font-family: 'PT Sans', sans-serif;
+}
+p.p3{
+	font-size: 18pt;
+	font-weight: 400;
+	font-family: 'Merriweather', serif;
+}
