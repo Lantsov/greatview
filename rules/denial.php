@@ -1,4 +1,5 @@
 <?php
+require_once '../back/setting.php';
 require '../front/base_top.php';
 require '../front/header.php';
 require '../front/page_start.php';
