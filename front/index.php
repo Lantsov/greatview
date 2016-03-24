@@ -1,8 +1,17 @@
 <div class="container-fluid">
 	<div class="row index-body" id="grid-container">
 		<div class="col-md-3 col-xs-12 grid-item">
-			111
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quisquam officia cumque. Dicta consectetur animi, amet recusandae tempore corporis labore ipsa. Non minima illum nostrum quam molestiae reiciendis, porro animi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur accusantium necessitatibus esse at dignissimos, voluptatem tempore doloremque obcaecati corporis maxime rem libero distinctio voluptas! Numquam facere quis sequi sint pariatur praesentium, beatae modi, incidunt atque ut, culpa eligendi corporis! Molestias culpa tempore doloribus minima, et nulla distinctio exercitationem. Rerum laboriosam laborum cumque blanditiis nemo quo nihil qui possimus, beatae voluptatum ad at et, eligendi enim ea eum odio suscipit. Officiis et laboriosam suscipit officia necessitatibus enim facere modi sapiente placeat deserunt, eius, repellendus, possimus eveniet quisquam commodi fuga cum obcaecati adipisci perferendis quaerat. Amet obcaecati, perferendis illum deserunt beatae dolorum similique culpa asperiores assumenda possimus quae fugit ratione ipsum molestiae voluptas unde inventore, rerum quisquam ad corporis veritatis. Quasi omnis quo tenetur hic? Esse a quasi vel hic repellendus voluptas officiis, quia sunt quo aliquam exercitationem animi autem natus debitis corporis, ipsa. Sint quasi facilis error numquam nesciunt hic dolorum reiciendis a, odit eveniet tempora illum perspiciatis accusantium autem, doloribus mollitia quae fugiat veniam incidunt. In laborum, vitae modi officia beatae, illo voluptatum. Rem maiores aliquam voluptas, dolor non ab tempore, iste soluta, quod assumenda dolores. Accusamus culpa ad voluptates facere! Odio ipsa quae dolorum quas optio recusandae! Maxime, modi?
+			<div class="card card-type1">
+				<div class="card-img-top">
+					<img src="content/img/u00001/ue45tg54g.jpg" class="card-img-top-img">
+					<span class="card-t1-cat">
+						<i class="fa fa-circle img-cat category-1" title="Category 1"></i> <a href="#">Подольск</a>
+					</span>
+				</div>
+				<div class="card-body">
+					22
+				</div>
+			</div>
 		</div>
 		<div class="col-md-3 col-xs-12 grid-item">
 			111

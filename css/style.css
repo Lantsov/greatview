@@ -184,3 +184,32 @@ nav{
 .page-view{
 	margin: 30px 60px 100px 60px;
 }
+.card{
+	background-color: #fff;
+	border-radius: 6px;
+}
+.card-img-top{
+	border-radius: 6px 6px 0 0;
+	position: relative;
+}
+.card-img-top-img{
+	max-width: 100%;
+	border-radius: 6px 6px 0 0;
+}
+.card-t1-cat{
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	background-color: rgba(255,255,255,.6);
+	padding: 3px 7px;
+	border-radius: 12px;
+}
+.card-t1-cat a{
+	display: none;
+}
+.card-t1-cat:hover a{
+	display: inline;
+}
+.category-1{
+	color: #eb4e36;
+}
