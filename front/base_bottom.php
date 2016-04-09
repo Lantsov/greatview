@@ -1,28 +1,17 @@
 <footer>
 	<div class="container-fluid">
 		<div class="row footer f-line1">
-			<div class="col-md-2">
+			<div class="col-md-3">
 				<a href="<?php echo $base_url ?>">
-					<img src="front/img/logo.png" alt="" class="logo-footer">
+					<img src="front/img/logo_v.3.png" alt="" class="logo-footer">
 				</a>
 			</div>
-			<div class="col-md-8 text-center">
+			<div class="col-md-6 text-center">
 				<ul class="nav-footer">
-					<li>
-						<a href="#">link 1</a>
-					</li>
-					<li>
-						<a href="#">link 2</a>
-					</li>
-					<li>
-						<a href="#">link 3</a>
-					</li>
-					<li>
-						<a href="#">link 4</a>
-					</li>
+					<?php include('front/main_nav.php'); ?>
 				</ul>
 			</div>
-			<div class="col-md-2 text-right">
+			<div class="col-md-3 text-right">
 				<ul class="social-footer">
 					<li>
 						<a href="#"><i class="fa fa-vk"></i> </a>
@@ -63,15 +52,51 @@
 		<script src="js/imagesloaded.pkgd.min.js"></script>
 		<script src="js/masonry.pkgd.min.js"></script>
 		<script type="text/javascript">
+
+			// masonry
 			var grid = document.querySelector('#grid-container');
 			var msnry;
 			imagesLoaded( grid, function() {
 				msnry = new Masonry( grid, {
 					itemSelector: '.grid-item',
-					columnWidth: '.col-md-3',
+					columnWidth: '.col-md-4',
 					percentPosition: true
 				});
 			});
+
+			//password show/hide
+			function psh(id) {
+				if (document.getElementById(id).getAttribute('type') == 'password') {
+					document.getElementById(id).setAttribute('type', 'text');
+					document.getElementById('psh-control').classList.add('fa-lock');
+					document.getElementById('psh-control').classList.remove('fa-unlock');
+				} else {
+					document.getElementById(id).setAttribute('type', 'password');
+					document.getElementById('psh-control').classList.remove('fa-lock');
+					document.getElementById('psh-control').classList.add('fa-unlock');
+				}
+			};
+
+			//modals
+			function modal_hide() {
+				document.getElementById('m-login').classList.add('hidden');
+				document.getElementById('m-reg').classList.add('hidden');
+				document.getElementById('overlayer').classList.add('hidden');
+				document.getElementById('id-body').classList.remove('modal-on');
+			};
+			function modal_show(modal) {
+				document.getElementById('id-body').classList.add('modal-on');
+				document.getElementById('overlayer').classList.remove('hidden');
+				document.getElementById(modal).classList.remove('hidden');
+			};
+			/*document.onkeypress= function(event) {
+				event= event||window.event;
+					if (event.keyCode == 27) {
+						modal_hide();
+					}
+					return false;
+				};*/
+
 		</script>
 	</body>
 </html>

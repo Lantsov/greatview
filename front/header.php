@@ -5,39 +5,39 @@
 				<ul class="nav nav-top">
 					<li class="nav-logo">
 						<a href="<?php echo $base_url ?>">
-							<img src="front/img/logo.png" alt="" class="nav-logo-img">
+							<img src="<?php echo $base_url ?>/front/img/logo_v.3.png" alt="" class="nav-logo-img">
 						</a>
 					</li>
 					<li>
-						<a href="#">Link 1</a>
+						<a href="<?php echo $base_url; ?>">Места</a>
 					</li>
 					<li>
-						<a href="#">Link 2</a>
+						<a href="<?php echo $base_url; ?>articles">Статьи</a>
 					</li>
-					<li>
-						<a href="#">Link 3</a>
+					<?php /*<li>
+						<a>Промо <sup>скоро</sup></a>
 					</li>
 					<li>
 						<a href="#">Link 4</a>
-					</li>
+					</li> */ ?>
 					<li class="pull-right">
-						<a href="#signin" class="btn-r">войти</a>
+						<a href="#up" class="btn-r" onclick="modal_show('m-login');">войти</a>
 					</li>
 				</ul>
 			</div>
 			<div class="col-md-12 nav-sub">
 				<ul class="nav nav-mid">
 					<li>
-						<a href="#">top</a>
+						<a href="<?php echo $base_url; ?>top">top</a>
 					</li>
 					<li>
-						<a href="#">рядом</a>
+						<a href="<?php echo $base_url; ?>near">рядом</a>
 					</li>
 					<li class="active">
-						<a href="#">новые</a>
+						<a href="<?php echo $base_url; ?>">новые</a>
 					</li>
 					<li>
-						<a href="#">рекомендуем</a>
+						<a href="<?php echo $base_url; ?>recommend">рекомендуем</a>
 					</li>
 					<li class="pull-right">
 						<img src="front/img/SVG/search.svg" class="svg-search"> <a href="#search">Я ищу...</a>
