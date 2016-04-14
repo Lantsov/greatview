@@ -4,6 +4,8 @@ $page_id = 'rules';
 require '../front/base_top.php';
 require '../front/header.php';
 require '../front/page_start.php';
+$passwordHash = password_hash('vj32-x035', PASSWORD_DEFAULT);
+echo $passwordHash;
 echo <<<END
 
 <h1>Отказ от ответственности</h1>

@@ -9,5 +9,6 @@ if ($site_on) {
 } else {
 	require 'front/site_off.php';
 };
+require 'back/db.php';
 require 'front/base_bottom.php';
 ?>
