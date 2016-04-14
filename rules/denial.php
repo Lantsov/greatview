@@ -1,5 +1,6 @@
 <?php
 require_once '../back/setting.php';
+$page_id = 'rules';
 require '../front/base_top.php';
 require '../front/header.php';
 require '../front/page_start.php';

@@ -12,7 +12,7 @@
 						<a href="<?php echo $base_url; ?>">Места</a>
 					</li>
 					<li>
-						<a href="<?php echo $base_url; ?>articles">Статьи</a>
+						<a href="<?php echo $base_url; ?>/articles">Статьи</a>
 					</li>
 					<?php /*<li>
 						<a>Промо <sup>скоро</sup></a>
@@ -28,16 +28,16 @@
 			<div class="col-md-12 nav-sub">
 				<ul class="nav nav-mid">
 					<li>
-						<a href="<?php echo $base_url; ?>top">top</a>
+						<a href="<?php echo $base_url; ?>/top">top</a>
 					</li>
 					<li>
-						<a href="<?php echo $base_url; ?>near">рядом</a>
+						<a href="<?php echo $base_url; ?>/near">рядом</a>
 					</li>
-					<li class="active">
+					<li <?php if ($page_id == 'index') {echo 'class="active"';}; ?>>
 						<a href="<?php echo $base_url; ?>">новые</a>
 					</li>
 					<li>
-						<a href="<?php echo $base_url; ?>recommend">рекомендуем</a>
+						<a href="<?php echo $base_url; ?>/recommend">рекомендуем</a>
 					</li>
 					<li class="pull-right">
 						<img src="front/img/SVG/search.svg" class="svg-search"> <a href="#search">Я ищу...</a>

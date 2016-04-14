@@ -8,7 +8,12 @@
 			</div>
 			<div class="col-md-6 text-center">
 				<ul class="nav-footer">
-					<?php include('front/main_nav.php'); ?>
+					<li>
+						<a href="<?php echo $base_url; ?>">Места</a>
+					</li>
+					<li>
+						<a href="<?php echo $base_url; ?>articles">Статьи</a>
+					</li>
 				</ul>
 			</div>
 			<div class="col-md-3 text-right">
