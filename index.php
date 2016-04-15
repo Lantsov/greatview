@@ -1,6 +1,7 @@
 <?php
 require_once 'back/setting.php';
 $page_id = 'index';
+require 'back/db.php';
 require_once 'back/front.php';
 require 'front/base_top.php';
 require 'front/header.php';
@@ -9,6 +10,5 @@ if ($site_on) {
 } else {
 	require 'front/site_off.php';
 };
-require 'back/db.php';
 require 'front/base_bottom.php';
 ?>

@@ -23,17 +23,17 @@
 		<div class="modal-login hidden" id="m-login">
 			<div class="modal-login-top">
 				<h1>Войти</h1>
-				<form action="<?php echo $base_url ?>back/form/login.php">
+				<form action="<?php echo $base_url ?>/back/login.php" method="POST">
 					<label for="e-mail">Электронная почта</label>
 					<div class="inp-place">
-						<input type="email" class="input-text" placeholder="">
+						<input type="email" class="input-text" placeholder="" name="email">
 						<i class="fa fa-at inp-ico"></i>
 					</div>
 					<div class="brbr"> </div>
 					<label for="password">Пароль</label>          
 					<div class="login-pass-sub">
 						<div class="l-pass inp-place">
-							<input type="password" class="input-text" placeholder="" id="pass-login">
+							<input type="password" class="input-text" placeholder="" id="pass-login" name="pass">
 							<i class="fa fa-unlock inp-icon psh" id="psh-control" onclick="psh('pass-login');"></i>
 						</div>
 						<div class="l-submit">
@@ -64,7 +64,7 @@
 		<div class="modal-reg hidden" id="m-reg">
 			<div class="modal-reg-full">
 				<h1>Создать аккаунт</h1>
-				<form action="<?php echo $base_url ?>back/form/reg.php">
+				<form action="<?php echo $base_url ?>/back/form/reg.php">
 					<div class="m-reg-mail">
 						<label for="email">Электронная почта</label>
 						<div class="inp-place">

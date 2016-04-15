@@ -21,7 +21,17 @@
 						<a href="#">Link 4</a>
 					</li> */ ?>
 					<li class="pull-right">
-						<a href="#up" class="btn-r" onclick="modal_show('m-login');">войти</a>
+<?php if (!$isSign) {
+echo <<<END
+<a href="#up" class="btn-r" onclick="modal_show('m-login');">войти</a>
+END;
+}else{
+echo <<<END
+<a href="#up" class="" >
+END;
+echo $userName;
+echo "</a>";
+}; ?>
 					</li>
 				</ul>
 			</div>
