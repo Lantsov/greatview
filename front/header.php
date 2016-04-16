@@ -30,7 +30,7 @@ echo <<<END
 <a href="#up" class="" >
 END;
 echo $userName;
-echo "</a>";
+echo '</a> <a href="'.$base_url.'/logout.php">exit</a>';
 }; ?>
 					</li>
 				</ul>
@@ -50,7 +50,7 @@ echo "</a>";
 						<a href="<?php echo $base_url; ?>/recommend">рекомендуем</a>
 					</li>
 					<li class="pull-right">
-						<img src="front/img/SVG/search.svg" class="svg-search"> <a href="#search">Я ищу...</a>
+						<img src="<?php echo $base_url ?>/front/img/SVG/search.svg" class="svg-search"> <a href="#search">Я ищу...</a>
 					</li>
 					<li class="fence pull-right">&nbsp;</li>
 					<li class="pull-right">
