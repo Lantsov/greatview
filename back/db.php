@@ -1,13 +1,20 @@
 <?php
-$db_user = 'get';
-$db_pass = '9293';
+$db_user = 'u0063822_gv';
+$db_pass = 'vJ32-x035!9293';
+$solt = '4rx2349gf(&Tfb';
+
+function safeMe($var){
+	$var = strip_tags($var);
+	$var = htmlentities($var);
+	return stripslashes($var);
+}
 
 if (isset($_COOKIE['id']) and isset($_COOKIE['hash'])) {
-$uHash = $_COOKIE["hash"]; //обезопасить!!!
-$uId = $_COOKIE["id"];
+$uHash = safeMe($_COOKIE["hash"]); //обезопасить!!!
+$uId = safeMe($_COOKIE["id"]);
 if ($uHash!='null' or $uId!='null') {
 	try {
-		$dbh = new PDO('mysql:host=localhost;dbname=gview;charset=utf8', $db_user, $db_pass);
+		$dbh = new PDO('mysql:host=localhost;dbname=u0063822_gview;charset=utf8', $db_user, $db_pass);
 		foreach($dbh->query('SELECT hash,name from users WHERE id="'.$uId.'"') as $row) {
 			if ($row['hash'] === $uHash) {
 				$isSign = true;

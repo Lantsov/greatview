@@ -387,7 +387,12 @@ label{
 	color: #3a405b;
 	text-decoration: underline;
 	font-weight: 700;
-	padding: 25px 0 15px 0;
+	padding: 5px 0 15px 0;
+}
+.login-error{
+	display: block;
+	text-align: center;
+	color: #eb4e36;
 }
 .or{
     height: 1px;
@@ -514,4 +519,52 @@ label{
 }
 mark{
 	background: #fff2a8;
+}
+.nav-top-uimg{
+	width: 26px;
+	max-height: 26px;
+	border-radius: 50%;
+	margin-right: 14px;
+}
+.ml{
+	margin-left: 20px;
+	padding-right: 10px;
+}
+.nav-user-button{
+	padding: 10px 19px;
+	border-radius: 7px;
+}
+.nav-user-button:hover,
+.nav-user-button.active{
+	background-color: #222328;
+	color: #fff;
+}
+.umenu{
+	position: relative;
+}
+.nav-usermenu{
+	z-index: 30;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 74px;
+	background-color: #222328;
+	color: #fff;
+	border-radius: 7px;
+}
+.nav-usermenu li{
+	display: table-row;
+	padding: 7px 20px !important;
+	line-height: 34px;
+	color: #fff;
+}
+.nav-usermenu li:last-child{
+	border-top: 1px solid #34353a;
+}
+.nav-usermenu li a{
+	color: #fff;
+}
+.nav-usermenu:hover > .nav-user-button{
+	background-color: #222328;
+	color: #fff;
 }

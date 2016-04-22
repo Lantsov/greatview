@@ -20,20 +20,24 @@
 					<li>
 						<a href="#">Link 4</a>
 					</li> */ ?>
-					<li class="pull-right">
-<?php if (!$isSign) {
-echo <<<END
-<a href="#up" class="btn-r" onclick="modal_show('m-login');">войти</a>
-END;
-}else{
-echo <<<END
-<a href="#up" class="" >
-END;
-echo $userName;
-echo '</a> <a href="'.$base_url.'/logout.php">exit</a>';
-}; ?>
+					<li class="pull-right umenu">
+<?php if (Auth\User::isAuthorized()): ?>
+<a onclick="umenu();" class="nav-user-button">User's name <i class="fa fa-angle-down ml" aria-hidden="true"></i></a>
+<ul class="nav-usermenu hidden">
+	<li><a href="#">Профиль</a></li>
+	<li><a href="#">Настройки</a></li>
+	<form class="ajax" method="post" action="./ajax.php">
+          <input type="hidden" name="act" value="logout">
+          <div class="form-actions">
+              <button class="btn btn-large btn-primary" type="submit">Logout</button>
+          </div>
+      </form>
+</ul>
 					</li>
 				</ul>
+<?php else: ?>
+<a href="#up" class="btn-r" onclick="modal_show('m-login');">войти</a>
+<?php endif; ?>
 			</div>
 			<div class="col-md-12 nav-sub">
 				<ul class="nav nav-mid">

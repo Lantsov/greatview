@@ -35,7 +35,10 @@
 		</div>
 		<div class="row footer f-line2">
 			<div class="col-md-6">
-				<p class="footer-p">Copyright GreatView.ru 2016 - <?php echo date("Y"); ?></p>
+				<p class="footer-p">Copyright GreatView.ru 2016 <?php $nowYear=date("Y"); if ($nowYear > '2016') {
+					echo "- ".$nowYear;
+				};
+				 ?></p>
 			</div>
 			<div class="col-md-6 text-right">
 				<ul class="footer-rules">
@@ -53,7 +56,8 @@
 		</div>
 	</div>
 </footer>
-	
+		<script src="<?php echo $base_url ?>/js/jquery-2.2.3.min.js"></script>
+		<script src="<?php echo $base_url ?>/js/ajax-form.js"></script>
 		<script src="<?php echo $base_url ?>/js/imagesloaded.pkgd.min.js"></script>
 		<script src="<?php echo $base_url ?>/js/masonry.pkgd.min.js"></script>
 		<script type="text/javascript">
@@ -102,6 +106,10 @@
 					return false;
 				};*/
 
+			function umenu() {
+				$(".nav-usermenu").toggleClass("hidden");
+				$(".nav-user-button").toggleClass("active");
+			}
 		</script>
 	</body>
 </html>
