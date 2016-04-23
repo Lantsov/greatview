@@ -64,7 +64,7 @@ class User
 
     public function authorize($username, $password, $remember=false)
     {
-        $query = "select id, username from users where
+        $query = "select id, username, name, role from users where
             username = :username and password = :password limit 1";
         $sth = $this->db->prepare($query);
         $salt = $this->getSalt($username);
@@ -87,6 +87,22 @@ class User
         } else {
             $this->is_authorized = true;
             $this->user_id = $this->user['id'];
+            $this->login = $this->user['username'];
+            $this->user_name = $this->user['name'];
+            $this->role = $this->user['role'];
+            /*$this->sex = $this->user['sex'];
+            /*$uid = $this->user_id;
+            try {
+                $dbh = new PDO('mysql:host=localhost;dbname=u0063822_gview;charset=utf8', $db_user, $db_pass);
+                foreach($dbh->query('SELECT mail,name,role,sex from user_data WHERE id="'.$uid.'"') as $row) {
+                    $_SESSION["mail"] = $row['mail'];
+                    $_SESSION["name"] = $row['name'];
+                    $_SESSION["role"] = $row['role'];
+                    $_SESSION["sex"] = $row['sex'];
+                };
+            } catch (PDOException $e) {
+                die();
+            };*/
             $this->saveSession($remember);
         }
 
@@ -97,12 +113,20 @@ class User
     {
         if (!empty($_SESSION["user_id"])) {
             unset($_SESSION["user_id"]);
+            unset($_SESSION["user_name"]);
+            unset($_SESSION["role"]);
         }
     }
 
-    public function saveSession($remember = false, $http_only = true, $days = 7)
+    public function saveSession($remember = true, $http_only = true, $days = 7)
     {
         $_SESSION["user_id"] = $this->user_id;
+        if ($this->user_name) {
+            $_SESSION["user_name"] = $this->user_name;
+        } else {
+            $_SESSION["user_name"] = $this->login;
+        };
+        $_SESSION["role"] = $this->role;
 
         if ($remember) {
             // Save session id in cookies
@@ -117,15 +141,15 @@ class User
         }
     }
 
-    public function create($username, $password) {
+    public function create($username, $password, $name) {
         $user_exists = $this->getSalt($username);
 
         if ($user_exists) {
             throw new \Exception("User exists: " . $username, 1);
         }
 
-        $query = "insert into users (username, password, salt)
-            values (:username, :password, :salt)";
+        $query = "insert into users (username, password, salt, name)
+            values (:username, :password, :salt, :name)";
         $hashes = $this->passwordHash($password);
         $sth = $this->db->prepare($query);
 
@@ -136,6 +160,7 @@ class User
                     ':username' => $username,
                     ':password' => $hashes['hash'],
                     ':salt' => $hashes['salt'],
+                    ':name' => $name
                 )
             );
             $this->db->commit();

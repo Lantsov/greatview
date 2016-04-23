@@ -22,14 +22,17 @@
 					</li> */ ?>
 					<li class="pull-right umenu">
 <?php if (Auth\User::isAuthorized()): ?>
-<a onclick="umenu();" class="nav-user-button">User's name <i class="fa fa-angle-down ml" aria-hidden="true"></i></a>
+<a onclick="umenu();" class="nav-user-button"><?php echo $_SESSION["user_name"] ?> <i class="fa fa-angle-down ml" aria-hidden="true"></i></a>
 <ul class="nav-usermenu hidden">
-	<li><a href="#">Профиль</a></li>
-	<li><a href="#">Настройки</a></li>
-	<form class="ajax" method="post" action="./ajax.php">
+	<li><a href="#"><i class="fa fa-user fa-fw"></i> Профиль</a></li>
+	<li><a href="#"><i class="fa fa-cog fa-fw"></i> Настройки</a></li>
+	<?php if ($_SESSION["role"] > '1'): ?>
+		<li><a href="#"><i class="fa fa-cog fa-fw"></i> Панель управления</a></li>
+	<?php endif; ?>
+	<form class="ajax menuexit" method="post" action="<?php echo $base_url ?>/ajax.php">
           <input type="hidden" name="act" value="logout">
-          <div class="form-actions">
-              <button class="btn btn-large btn-primary" type="submit">Logout</button>
+          <div class="form-actions menuexit">
+              <button class="btn-exit" type="submit"><i class="fa fa-arrow-circle-o-right fa-fw" aria-hidden="true"></i> Выход</button>
           </div>
       </form>
 </ul>

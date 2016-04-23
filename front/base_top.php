@@ -41,13 +41,13 @@
 						<i class="fa fa-at inp-ico"></i>
 					</div>
 					<div class="brbr"> </div>
-					<label for="password">Пароль</label>          
+					<label for="password">Пароль</label>     
 					<div class="login-pass-sub">
 						<div class="l-pass inp-place">
 							<input type="password" class="input-text" placeholder="" id="pass-login" name="password">
 							<i class="fa fa-unlock inp-icon psh" id="psh-control" onclick="psh('pass-login');"></i>
 						</div>
-						<label class="checkbox">
+						<label class="checkbox hidden">
 							<input name="remember-me" type="checkbox" value="remember-me" checked> Remember me
 						</label>
 						<input type="hidden" name="act" value="login">
@@ -55,7 +55,7 @@
 							<button type="submit" class="but-login" id="sub_login">Войти</button>
 							
 						</div>
-						<div id="results" class="main-error alert alert-error">&nbsp;</div>
+						<div id="results" class="main-error alert alert-error">&nbsp;</div>     
 					</div>
 				</form>
 				<a href="#" class="m-forgot">Забыли пароль?</a>
@@ -84,19 +84,20 @@
 		<div class="modal-reg hidden" id="m-reg">
 			<div class="modal-reg-full">
 				<h1>Создать аккаунт</h1>
-				<form action="<?php echo $base_url ?>/back/form/reg.php">
+				<form action="<?php echo $base_url; ?>/ajax.php" class="form-signin ajax" method="post">
 					<div class="m-reg-mail">
-						<label for="email">Электронная почта</label>
+						<label for="username">Электронная почта</label>
 						<div class="inp-place">
-							<input type="email" class="input-text" name="email">
+							<input type="email" class="input-text" name="username">
 							<i class="fa fa-at inp-ico"></i>
 						</div>
 						<div class="brbr"> </div>
+						<div class="main-error alert alert-error"></div>
 						<div class="m-reg-nick-pass">
 							<div class="m-reg-nick">
-								<label for="login">Имя для отображения</label>
+								<label for="name">Имя для отображения</label>
 								<div class="inp-place">
-									<input type="text" class="input-text" name="login">
+									<input type="text" class="input-text" name="name">
 									<i class="fa fa-user inp-ico"></i>
 								</div>
 							</div>
@@ -107,18 +108,20 @@
 									<i class="fa fa-unlock inp-ico"></i>
 								</div>
 							</div>
+							<input type="hidden" name="act" value="register">
 						</div>
 					</div>
 					<div class="m-reg-info">
 						Нажимая кнопку ниже вы подтверждаете свое согласие<br>
-						c <a href="<?php echo $base_url; ?>rules/rule.php">правилами сайта</a> и <a href="<?php echo $base_url; ?>rules/privacy.php">политикой приватности</a>
+						c <a href="<?php echo $base_url; ?>/rules/rule.php">правилами сайта</a> и <a href="<?php echo $base_url; ?>/rules/privacy.php">политикой приватности</a>
 					</div>
 					<div class="m-reg-submit">
 						<button class="but-reg" type="submit">регистрация</button>
 					</div>
 				</form>
 				<br>
-				<hr class="or">
+				<div class="hidden">
+					<hr class="or">
 				<div class="m-social">
 					<div class="soc1-3">
 						<a href="#" class="soc-vk"><i class="fa fa-vk fa-fw fa-lg"></i> Вконтакте</a>
@@ -130,6 +133,8 @@
 						<a href="#" class="soc-fb"><i class="fa fa-facebook fa-fw fa-lg"></i> Facebook</a>
 					</div>
 				</div>
+				</div>
+				
 			</div>
 		</div>
 		<?php endif; ?>

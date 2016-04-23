@@ -46,12 +46,12 @@ class AuthorizationAjaxRequest extends AjaxRequest
         $auth_result = $user->authorize($username, $password, $remember);
 
         if (!$auth_result) {
-            $this->setFieldError("password", "Invalid username or password");
+            $this->setFieldError("password", "Неверное имя пользователя и/или пароль");
             return;
         }
 
         $this->status = "ok";
-        $this->setResponse("redirect", ".");
+        $this->setResponse("redirect", " ");
         $this->message = sprintf("Hello, %s! Access granted.", $username);
     }
 
@@ -70,7 +70,7 @@ class AuthorizationAjaxRequest extends AjaxRequest
         $user = new Auth\User();
         $user->logout();
 
-        $this->setResponse("redirect", ".");
+        $this->setResponse("redirect", " ");
         $this->status = "ok";
     }
 
@@ -87,41 +87,36 @@ class AuthorizationAjaxRequest extends AjaxRequest
         setcookie("sid", "");
 
         $username = $this->getRequestParam("username");
-        $password1 = $this->getRequestParam("password1");
-        $password2 = $this->getRequestParam("password2");
+        $name = $this->getRequestParam("name");
+        $password = $this->getRequestParam("password");
 
         if (empty($username)) {
-            $this->setFieldError("username", "Enter the username");
+            $this->setFieldError("username", "Укажите почту");
             return;
         }
 
-        if (empty($password1)) {
-            $this->setFieldError("password1", "Enter the password");
+        if (empty($name)) {
+            $this->setFieldError("name", "Необходимо имя для отображения");
             return;
         }
 
-        if (empty($password2)) {
-            $this->setFieldError("password2", "Confirm the password");
-            return;
-        }
-
-        if ($password1 !== $password2) {
-            $this->setFieldError("password2", "Confirm password is not match");
+        if (empty($password)) {
+            $this->setFieldError("password", "Защитите аккаунт паролем");
             return;
         }
 
         $user = new Auth\User();
 
         try {
-            $new_user_id = $user->create($username, $password1);
+            $new_user_id = $user->create($username, $password, $name);
         } catch (\Exception $e) {
             $this->setFieldError("username", $e->getMessage());
             return;
         }
-        $user->authorize($username, $password1);
+        $user->authorize($username, $password);
 
         $this->message = sprintf("Hello, %s! Thank you for registration.", $username);
-        $this->setResponse("redirect", "/");
+        $this->setResponse("redirect", " ");
         $this->status = "ok";
     }
 }

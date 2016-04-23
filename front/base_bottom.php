@@ -98,14 +98,8 @@
 				document.getElementById('overlayer').classList.remove('hidden');
 				document.getElementById(modal).classList.remove('hidden');
 			};
-			/*document.onkeypress= function(event) {
-				event= event||window.event;
-					if (event.keyCode == 27) {
-						modal_hide();
-					}
-					return false;
-				};*/
 
+			// user menu
 			function umenu() {
 				$(".nav-usermenu").toggleClass("hidden");
 				$(".nav-user-button").toggleClass("active");
