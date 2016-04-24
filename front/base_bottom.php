@@ -3,7 +3,7 @@
 		<div class="row footer f-line1">
 			<div class="col-md-3">
 				<a href="<?php echo $base_url ?>">
-					<img src="front/img/logo_v.3.png" alt="" class="logo-footer">
+					<img src="<?php echo $base_url ?>/front/img/logo_v.3.png" alt="" class="logo-footer">
 				</a>
 			</div>
 			<div class="col-md-6 text-center">
@@ -12,7 +12,7 @@
 						<a href="<?php echo $base_url; ?>">Места</a>
 					</li>
 					<li>
-						<a href="<?php echo $base_url; ?>articles">Статьи</a>
+						<a href="<?php echo $base_url; ?>/articles">Статьи</a>
 					</li>
 				</ul>
 			</div>
@@ -35,7 +35,10 @@
 		</div>
 		<div class="row footer f-line2">
 			<div class="col-md-6">
-				<p class="footer-p">Copyright GreatView.ru 2016 - <?php echo date("Y"); ?></p>
+				<p class="footer-p">Copyright GreatView.ru 2016 <?php $nowYear=date("Y"); if ($nowYear > '2016') {
+					echo "- ".$nowYear;
+				};
+				 ?></p>
 			</div>
 			<div class="col-md-6 text-right">
 				<ul class="footer-rules">
@@ -46,16 +49,17 @@
 						<a href="#">правила</a>
 					</li>
 					<li>
-						<a href="rules/denial.php">отказ от ответственности</a>
+						<a href="<?php echo $base_url ?>/rules/denial.php">отказ от ответственности</a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</div>
 </footer>
-	
-		<script src="js/imagesloaded.pkgd.min.js"></script>
-		<script src="js/masonry.pkgd.min.js"></script>
+		<script src="<?php echo $base_url ?>/js/jquery-2.2.3.min.js"></script>
+		<script src="<?php echo $base_url ?>/js/ajax-form.js"></script>
+		<script src="<?php echo $base_url ?>/js/imagesloaded.pkgd.min.js"></script>
+		<script src="<?php echo $base_url ?>/js/masonry.pkgd.min.js"></script>
 		<script type="text/javascript">
 
 			// masonry
@@ -94,14 +98,12 @@
 				document.getElementById('overlayer').classList.remove('hidden');
 				document.getElementById(modal).classList.remove('hidden');
 			};
-			/*document.onkeypress= function(event) {
-				event= event||window.event;
-					if (event.keyCode == 27) {
-						modal_hide();
-					}
-					return false;
-				};*/
 
+			// user menu
+			function umenu() {
+				$(".nav-usermenu").toggleClass("hidden");
+				$(".nav-user-button").toggleClass("active");
+			}
 		</script>
 	</body>
 </html>

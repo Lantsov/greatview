@@ -1,7 +1,11 @@
 <?php
+if (!empty($_COOKIE['sid'])) {
+    session_id($_COOKIE['sid']);
+}
+session_start();
 require_once 'back/setting.php';
+require_once 'back/auth.php';
 $page_id = 'index';
-require_once 'back/front.php';
 require 'front/base_top.php';
 require 'front/header.php';
 if ($site_on) {
