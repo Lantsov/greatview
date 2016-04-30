@@ -5,7 +5,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>GreatView</title>
-		<!-- <base href="< ?php echo $base_url ?>"> -->
 		<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700|Merriweather:400,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 		<link href="<?php echo $base_url ?>/css/bootstrap.min.css" rel="stylesheet">
 		<link href="<?php echo $base_url ?>/css/style.css" rel="stylesheet">

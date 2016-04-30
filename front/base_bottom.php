@@ -43,10 +43,10 @@
 			<div class="col-md-6 text-right">
 				<ul class="footer-rules">
 					<li>
-						<a href="#">политика конфидициальности</a>
+						<a href="<?php echo $base_url ?>/rules/privacy.php">политика конфидициальности</a>
 					</li>
 					<li>
-						<a href="#">правила</a>
+						<a href="<?php echo $base_url ?>/rules/index.php">правила</a>
 					</li>
 					<li>
 						<a href="<?php echo $base_url ?>/rules/denial.php">отказ от ответственности</a>
@@ -57,6 +57,7 @@
 	</div>
 </footer>
 		<script src="<?php echo $base_url ?>/js/jquery-2.2.3.min.js"></script>
+		<script src="<?php echo $base_url ?>/js/jquery.cookie.js"></script>
 		<script src="<?php echo $base_url ?>/js/ajax-form.js"></script>
 		<script src="<?php echo $base_url ?>/js/imagesloaded.pkgd.min.js"></script>
 		<script src="<?php echo $base_url ?>/js/masonry.pkgd.min.js"></script>
@@ -72,7 +73,7 @@
 					percentPosition: true
 				});
 			});
-
+<?php if (!Auth\User::isAuthorized()): ?>
 			//password show/hide
 			function psh(id) {
 				if (document.getElementById(id).getAttribute('type') == 'password') {
@@ -98,12 +99,35 @@
 				document.getElementById('overlayer').classList.remove('hidden');
 				document.getElementById(modal).classList.remove('hidden');
 			};
-
+<?php else: ?>
 			// user menu
 			function umenu() {
 				$(".nav-usermenu").toggleClass("hidden");
 				$(".nav-user-button").toggleClass("active");
 			}
+	<?php if ($_SESSION["role"]>'2'): ?>
+			//admin panel
+			if ($.cookie('adminpanel') == "true") {
+				$("#adminpanel").prop('checked',true);
+			}else{
+				$("#adminpanel").prop('checked',false);
+			};
+			function adminPanel() {
+				var checked = $("#adminpanel").is(':checked');
+				if (checked) {
+                	$(".dev-menu").slideDown("slow"); 
+                	$.cookie('adminpanel', 'true');
+            	} else {
+                	$(".dev-menu").hide(); 
+                	$.cookie('adminpanel', 'false');
+            	};
+			};
+			adminPanel();
+			$("#adminpanel").change(function () {
+            	adminPanel();
+        	});
+    <?php endif; ?>
+<?php endif; ?>
 		</script>
 	</body>
 </html>
