@@ -232,13 +232,17 @@ nav{
 	color: #222328;
 }
 .card-t1-h2{
-	margin: 15px 0 0;
+	margin: 0;
 	padding: 0;
 	color: #3a405b;
 	overflow: hidden;
 	font-size: 13px;
 	font-family: 'Merriweather', serif;
 	font-weight: 400;
+}
+.card-t1-h2 a{
+	color: inherit;
+	font-weight: inherit;
 }
 .card-t1-footer{
 	border-top: 1px solid #f0f2f7;
@@ -681,6 +685,3 @@ mark{
 .checkbox:checked + label:after {
   left: 26px;
 }
-/*.checkbox:focus + label:before {
-  box-shadow: 0 0 0 3px rgba(255,255,0,.5);
-}*/

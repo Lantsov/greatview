@@ -5,6 +5,7 @@ if (!empty($_COOKIE['sid'])) {
 session_start();
 require_once 'back/setting.php';
 require_once 'back/auth.php';
+require 'back/place_type.php';
 $page_id = 'index';
 if ($_SESSION["role"]>'2') {
 	require 'front/top_admin.php';
