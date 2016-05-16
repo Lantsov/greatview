@@ -10,8 +10,6 @@ require '../back/db.php';
 require '../front/base_top.php';
 require '../front/header.php';
 require '../front/page_start.php';
-//$passwordHash = md5(md5($solt).md5(md5('vj32-x035').md5($solt)));
-//echo $passwordHash;
 echo <<<END
 
 <h1>Отказ от ответственности</h1>

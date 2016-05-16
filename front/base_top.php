@@ -4,8 +4,10 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>GreatView</title>
-		<!-- <base href="< ?php echo $base_url ?>"> -->
+		<title>GreatView <?php
+			if ($page_id == '404') {echo ' - Страница не найдена, ошибка 404';};
+			if ($page_id == 'place') {echo ' - место #gv'.str_pad($place_id, 5, '0', STR_PAD_LEFT).' - сервис обмена отличными местами';};
+		?></title>
 		<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700|Merriweather:400,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 		<link href="<?php echo $base_url ?>/css/bootstrap.min.css" rel="stylesheet">
 		<link href="<?php echo $base_url ?>/css/style.css" rel="stylesheet">
@@ -15,9 +17,12 @@
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		<?php if ($page_id == 'place'): ?>
+		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+		<?php endif; ?>
 	</head>
 	<body class="" id="id-body">
-<!--	<script>
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -26,7 +31,7 @@
   ga('create', 'UA-76614717-1', 'auto');
   ga('send', 'pageview');
 
-</script> -->
+</script>
 	<div id="up"> </div>
 	<div class="overlay hidden" id="overlayer" onclick="modal_hide();"> 
 	</div>

@@ -22,6 +22,10 @@
 					</li> */ ?>
 					<li class="pull-right umenu">
 <?php if (Auth\User::isAuthorized()): ?>
+	<?php if ($_SESSION["role"] > '2'): ?>
+		<input type="checkbox" class="checkbox" id="adminpanel" />
+		<label for="adminpanel"><i class="fa fa-cogs"></i> </label>
+	<?php endif; ?>
 <a onclick="umenu();" class="nav-user-button"><?php echo $_SESSION["user_name"] ?> <i class="fa fa-angle-down ml" aria-hidden="true"></i></a>
 <ul class="nav-usermenu hidden">
 	<li><a href="#"><i class="fa fa-user fa-fw"></i> Профиль</a></li>
