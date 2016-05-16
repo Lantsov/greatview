@@ -57,6 +57,7 @@
 	</div>
 </footer>
 		<script src="<?php echo $base_url ?>/js/jquery-2.2.3.min.js"></script>
+		<script src="<?php echo $base_url ?>/js/imagelightbox.min.js"></script>
 		<script src="<?php echo $base_url ?>/js/jquery.cookie.js"></script>
 		<script src="<?php echo $base_url ?>/js/ajax-form.js"></script>
 		<script src="<?php echo $base_url ?>/js/imagesloaded.pkgd.min.js"></script>
@@ -73,7 +74,7 @@
 					percentPosition: true
 				});
 			});
-<?php if (!Auth\User::isAuthorized()): ?>
+<?php //if (!Auth\User::isAuthorized()): ?>
 			//password show/hide
 			function psh(id) {
 				if (document.getElementById(id).getAttribute('type') == 'password') {
@@ -99,13 +100,13 @@
 				document.getElementById('overlayer').classList.remove('hidden');
 				document.getElementById(modal).classList.remove('hidden');
 			};
-<?php else: ?>
+<?php //else: ?>
 			// user menu
 			function umenu() {
 				$(".nav-usermenu").toggleClass("hidden");
 				$(".nav-user-button").toggleClass("active");
 			}
-	<?php if ($_SESSION["role"]>'2'): ?>
+	<?php //if ($_SESSION["role"]>'2'): ?>
 			//admin panel
 			if ($.cookie('adminpanel') == "true") {
 				$("#adminpanel").prop('checked',true);
@@ -116,18 +117,108 @@
 				var checked = $("#adminpanel").is(':checked');
 				if (checked) {
                 	$(".dev-menu").slideDown("slow"); 
-                	$.cookie('adminpanel', 'true');
+                	$.cookie('adminpanel', 'true', {path: '/' });
             	} else {
                 	$(".dev-menu").hide(); 
-                	$.cookie('adminpanel', 'false');
+                	$.cookie('adminpanel', 'false', {path: '/' });
             	};
 			};
 			adminPanel();
 			$("#adminpanel").change(function () {
             	adminPanel();
         	});
-    <?php endif; ?>
-<?php endif; ?>
+    <?php //endif; ?>
+<?php //endif; ?>
 		</script>
+		<script>
+
+    $( function()
+    {
+        var activityIndicatorOn = function()
+            {
+                $( '<div id="imagelightbox-loading"><div></div></div>' ).appendTo( 'body' );
+            },
+            activityIndicatorOff = function()
+            {
+                $( '#imagelightbox-loading' ).remove();
+            },
+
+            overlayOn = function()
+            {
+                $( '<div id="imagelightbox-overlay"></div>' ).appendTo( 'body' );
+            },
+            overlayOff = function()
+            {
+                $( '#imagelightbox-overlay' ).remove();
+            },
+
+            closeButtonOn = function( instance )
+            {
+                $( '<a href="#" id="imagelightbox-close">Close</a>' ).appendTo( 'body' ).on( 'click touchend', function(){ $( this ).remove(); instance.quitImageLightbox(); return false; });
+            },
+            closeButtonOff = function()
+            {
+                $( '#imagelightbox-close' ).remove();
+            },
+
+            captionOn = function()
+            {
+                var description = '';
+                if( description.length > 0 )
+                    $( '<div id="imagelightbox-caption">' + description + '</div>' ).appendTo( 'body' );
+            },
+            captionOff = function()
+            {
+                $( '#imagelightbox-caption' ).remove();
+            },
+
+            navigationOn = function( instance, selector )
+            {
+                var images = $( selector );
+                if( images.length )
+                {
+                    var nav = $( '<div id="imagelightbox-nav"></div>' );
+                    for( var i = 0; i < images.length; i++ )
+                        nav.append( '<a href="#"></a>' );
+
+                    nav.appendTo( 'body' );
+                    nav.on( 'click touchend', function(){ return false; });
+
+                    var navItems = nav.find( 'a' );
+                    navItems.on( 'click touchend', function()
+                    {
+                        var $this = $( this );
+                        if( images.eq( $this.index() ).attr( 'href' ) != $( '#imagelightbox' ).attr( 'src' ) )
+                            instance.switchImageLightbox( $this.index() );
+
+                        navItems.removeClass( 'active' );
+                        navItems.eq( $this.index() ).addClass( 'active' );
+
+                        return false;
+                    })
+                    .on( 'touchend', function(){ return false; });
+                }
+            },
+            navigationUpdate = function( selector )
+            {
+                var items = $( '#imagelightbox-nav a' );
+                items.removeClass( 'active' );
+                items.eq( $( selector ).filter( '[href="' + $( '#imagelightbox' ).attr( 'src' ) + '"]' ).index( selector ) ).addClass( 'active' );
+            },
+            navigationOff = function()
+            {
+                $( '#imagelightbox-nav' ).remove();
+            };
+
+        var instanceF = $( 'a[data-imagelightbox="f"]' ).imageLightbox(
+        {
+            onStart:        function() { overlayOn(); closeButtonOn( instanceF ); },
+            onEnd:          function() { overlayOff(); captionOff(); closeButtonOff(); activityIndicatorOff(); },
+            onLoadStart:    function() { captionOff(); activityIndicatorOn(); },
+            onLoadEnd:      function() { captionOn(); activityIndicatorOff(); }
+        });
+
+    });
+</script>
 	</body>
 </html>
