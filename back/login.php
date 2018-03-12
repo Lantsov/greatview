@@ -2,7 +2,7 @@
 require_once 'setting.php';
 require_once 'db.php';
 try {
-    $dbh = new PDO('mysql:host=localhost;dbname=gview;charset=utf8', $db_user, $db_pass);
+    $dbh = new PDO('mysql:host=localhost;dbname=$db_name;charset=utf8', $db_user, $db_pass);
     $pMail = safeMe($_POST['email']);//'admin@greatview.ru';//
     $pPass = /*password_hash(*/safeMe($_POST['pass'])/*, PASSWORD_DEFAULT)*/;
     $pPass = md5(md5($solt).md5(md5($pPass).md5($solt)));

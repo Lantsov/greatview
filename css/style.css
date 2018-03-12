@@ -103,6 +103,7 @@ nav{
 	-o-filter: invert(100%);
 	-ms-filter: invert(100%);
 	max-height: 50px;
+	margin: 50px 0;
 }
 .text-center{
 	text-align: center;

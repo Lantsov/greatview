@@ -1,6 +1,7 @@
 <?php
 $db_user = 'gview';
 $db_pass = 'vj32-x035';
+$db_name = 'gview';
 $solt = '4rx2349gf(&Tfb';
 
 function safeMe($var){
@@ -14,7 +15,7 @@ $uHash = safeMe($_COOKIE["hash"]); //обезопасить!!!
 $uId = safeMe($_COOKIE["id"]);
 if ($uHash!='null' or $uId!='null') {
 	try {
-		$dbh = new PDO('mysql:host=localhost;dbname=gview;charset=utf8', $db_user, $db_pass);
+		$dbh = new PDO('mysql:host=localhost;dbname=$db_name;charset=utf8', $db_user, $db_pass);
 		foreach($dbh->query('SELECT hash,name from users WHERE id="'.$uId.'"') as $row) {
 			if ($row['hash'] === $uHash) {
 				$isSign = true;

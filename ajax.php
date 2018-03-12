@@ -33,12 +33,12 @@ class AuthorizationAjaxRequest extends AjaxRequest
         $remember = !!$this->getRequestParam("remember-me");
 
         if (empty($username)) {
-            $this->setFieldError("username", "Enter the username");
+            $this->setFieldError("username", "Введите адрес почты");
             return;
         }
 
         if (empty($password)) {
-            $this->setFieldError("password", "Enter the password");
+            $this->setFieldError("password", "Укажите пароль");
             return;
         }
 
