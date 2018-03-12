@@ -31,7 +31,7 @@
 					</a>
 					<i class="tab"> </i>
 					<a href="#">
-						<i class="fa fa-street-view"></i> <?php echo $row['visits'] ?> посещений
+						<i class="fa fa-street-view"></i> <?php echo $row['visits'] ?> 
 					</a>
 					<i class="tab"> </i>
 					<a href="#" class="pull-right">

@@ -7,11 +7,11 @@ require_once '../setting.php';
 require_once '../auth.php';
 $base_url = 'http://'.$_SERVER['HTTP_HOST'];
 if ($_SESSION["role"]>'3') {
-	$db_user = "u0063822_gv";
-	$db_pass = "vJ32-x035!9293";
+	$db_user = "gview";
+	$db_pass = "vj32-x035";
 	if (isset($_POST['online'])) {
 		$doOnline = safeMe($_POST['online']);
-		$dbh = new PDO('mysql:host=localhost;dbname=u0063822_gview;charset=utf8', $db_user, $db_pass);
+		$dbh = new PDO('mysql:host=localhost;dbname=gview;charset=utf8', $db_user, $db_pass);
 		try {
 			$dbh->beginTransaction();
 			$dbh->exec("update system set online=$doOnline where id=1");
@@ -23,7 +23,7 @@ if ($_SESSION["role"]>'3') {
 		};
 	};
 	try {
-		$dbh = new PDO('mysql:host=localhost;dbname=u0063822_gview;charset=utf8', $db_user, $db_pass);
+		$dbh = new PDO('mysql:host=localhost;dbname=gview;charset=utf8', $db_user, $db_pass);
 		foreach($dbh->query("select online from system") as $sys) {
 			$system->online = $sys['online'];
 		};

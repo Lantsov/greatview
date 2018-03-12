@@ -1,11 +1,11 @@
 <?php
 $base_url = 'http://'.$_SERVER['HTTP_HOST'];
 unset($page_id);
-$db_user = "u0063822_gv";
-$db_pass = "vJ32-x035!9293";
+$db_user = "gview";
+$db_pass = "vj32-x035";
 // touch DB #################################################
 try {
-	$dbh = new PDO('mysql:host=localhost;dbname=u0063822_gview;charset=utf8', $db_user, $db_pass);
+	$dbh = new PDO('mysql:host=localhost;dbname=gview;charset=utf8', $db_user, $db_pass);
 	foreach($dbh->query("select online from system") as $sys) {
 		$system->online = $sys['online'];
 	};

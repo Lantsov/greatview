@@ -10,9 +10,9 @@ class User
     private $user_id;
 
     private $db_host = "localhost";
-    private $db_name = "u0063822_gview";
-    private $db_user = "u0063822_gv";
-    private $db_pass = "vJ32-x035!9293";
+    private $db_name = "gview";
+    private $db_user = "gview";
+    private $db_pass = "vj32-x035";
 
     private $is_authorized = false;
 

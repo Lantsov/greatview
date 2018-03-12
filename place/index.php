@@ -7,14 +7,14 @@ require_once '../back/setting.php';
 require_once '../back/auth.php';
 require '../back/place_type.php';
 $page_id = 'place';
-$db_user = "u0063822_gv";
-$db_pass = "vJ32-x035!9293";
+$db_user = "gview";
+$db_pass = "vj32-x035";
 if (Auth\User::isAuthorized()) {
 	if (isset($_POST['do']) and $_POST['do']='addvisit') {
 		$pl_id = safeMe($_POST['visit-place']);
 		$us_id = safeMe($_POST['visit-user']);
 		$number = safeMe($_POST['visit-num']) + 1;
-		$dbh = new PDO('mysql:host=localhost;dbname=u0063822_gview;charset=utf8', $db_user, $db_pass);
+		$dbh = new PDO('mysql:host=localhost;dbname=gview;charset=utf8', $db_user, $db_pass);
 		try {
 			$dbh->beginTransaction();
 			$dbh->exec("insert into place_visit (place_id, user_id) values ($pl_id, $us_id)");
@@ -49,7 +49,7 @@ $page_id = '404';
 			require '../front/404.php';
 		}else{
 			try {
-			    $dbh = new PDO('mysql:host=localhost;dbname=u0063822_gview;charset=utf8', $db_user, $db_pass);
+			    $dbh = new PDO('mysql:host=localhost;dbname=gview;charset=utf8', $db_user, $db_pass);
 			    foreach($dbh->query("select location, about, howtogo, takewith, photo, user_id, short_text, type, poll, visits, comments from place where id=$place_id") as $row) {
 			       	$place->location = $row['location'];
 			       	$place->about = $row['about'];
@@ -78,7 +78,7 @@ $page_id = '404';
 			};
 			if ($place->visits > '0') {
 				try {
-				    $dbh = new PDO('mysql:host=localhost;dbname=u0063822_gview;charset=utf8', $db_user, $db_pass);
+				    $dbh = new PDO('mysql:host=localhost;dbname=gview;charset=utf8', $db_user, $db_pass);
 				    foreach($dbh->query("select users.id, users.avatar, users.name from users inner join place_visit on place_visit.user_id=users.id where place_visit.place_id = $place_id") as $rows) {
 				       	$visit->user->id[] = $rows['id'];
 				       	if ($_SESSION["user_id"]=$rows['id']) {
