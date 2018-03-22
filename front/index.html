@@ -1,22 +1,110 @@
 <!doctype html>
 <html lang="ru">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-
-    <title>Hello, world!</title>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i|PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <script src="js/fontawesome-all.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>new front</title>
   </head>
   <body>
-    
+    <header>
+      <div class="container-fluid">
+
+
+        <!-- only for admin -->
+        <div class="row admin-topbar hidden" id="admin-topbar">
+          <div class="col-auto">
+            <i class="fas fa-toggle-on fa-lg admin-topbar_siteon"></i> <strong>Online</strong>
+          </div>
+          <div class="col-auto">|</div>
+          <div class="col-auto">
+            <a href="#"><i class="fas fa-tachometer-alt"></i> Панель управления</a>
+          </div>
+          <div class="col">
+            <a href="#"><i class="fas fa-user"></i> Пользователи</a>
+          </div>
+        </div>
+        <!-- //only for admin // -->
+
+
+        <!-- header -->
+        <div class="row header-top">
+          <div class="col-auto phone-100">
+            <a href="echo $base_url;">
+              <img src="img/logo_v.3.png" alt="" class="header-top_logo">
+            </a>
+          </div>
+          <div class="col-auto phone-off">
+            <nav class="header-top_nav">
+              <ul>
+                <li>
+                  <a href="echo $base_url">Места</a>
+                </li>
+                <li>
+                  <a href="#">Статьи</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col float-right text-right phone-off">
+            <a class="button-round">Войти</a>
+          </div>
+        </div>
+        <div class="row header-bottom">
+          <div class="col">
+            <nav class="header-bottom_nav">
+              <ul>
+                <li>
+                  <a href="#">ТОП</a>
+                </li>
+                <li>
+                  <a href="#">рядом</a>
+                </li>
+                <li>
+                  <a href="#" class="active">рядом</a>
+                </li>
+                <li>
+                  <a href="#">рекомендуемые</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col header-bottom_search text-center">
+            <ul>
+              <li class="border-right_1_bg">
+                <a href="#">правила</a>
+              </li>
+              <li>
+                <a href="#" class="cur_edit"><i class="fas fa-search fa-lg"></i> я ищу...</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- //header -->
+
+      </div>
+    </header>
+
+    <!-- places -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 place-frame">
+          <div class="">
+            
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
   </body>
 </html>

@@ -1,0 +1,210 @@
+::selection {
+	background: #fff2a8;
+}
+::-moz-selection {
+	background: #fff2a8;
+}
+body{
+	font-family: 'PT Sans', sans-serif;
+	font-size: 14px;
+	background-color: #f6f6f6;
+}
+.hidden{
+	display: none !important;
+}
+
+/* MEDIA */
+@media (max-width: 767.98px) {
+	.header-bottom{
+		visibility: hidden;
+		display: none;
+	}
+	.phone-off{
+		visibility: hidden;
+		display: none;
+	}
+	.phone-100{
+		width: 100%;
+		text-align: center;
+	}
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.header-bottom{
+		visibility: hidden;
+		display: none;
+	}
+}
+
+/*
+
+font-family: 'PT Sans', sans-serif;
+font-family: 'Merriweather', serif;
+
+*/
+
+
+
+/* ADMIN */
+.admin-topbar{
+	position: sticky;
+	position: -webkit-sticky;
+	position: -moz-sticky;
+	position: -ms-sticky;
+	position: -o-sticky;
+	top: 0;
+	width: 100%;
+	line-height: 38px;
+	background-color: #fff;
+	-webkit-box-shadow: 0px 7px 35px 0px #adadad;
+	-moz-box-shadow: 0px 7px 35px 0px #adadad;
+	box-shadow: 0px 7px 35px 0px #adadad;
+}
+.admin-topbar a{
+	color: #aaa;
+}
+.admin-topbar_siteoff{
+	color: rgba(250,60,90,1);
+}
+.admin-topbar_siteon{
+	color: rgba(0,200,0,1);
+}
+
+
+
+
+/* HEADER */
+.header-top{
+	background-color: #fff;
+	height: 90px;
+	line-height: 90px;
+	padding: 0 60px;
+}
+.header-bottom{
+	background-color: #fff;
+	height: 56px;
+	line-height: 56px;
+	padding: 0 60px;
+	margin-top: 1px;
+}
+.header-top_logo{
+	max-height: 66px;
+}
+.header-top_nav ul,
+.header-bottom_nav ul,
+.header-bottom_search ul{
+	list-style: none;
+	padding: 0;
+	margin-bottom: 0;
+}
+.header-top_nav ul li,
+.header-bottom_nav ul li,
+.header-bottom_search ul li{
+	display: inline-block;
+	font-weight: 700;
+	padding: 0 20px;
+}
+.header-bottom_nav ul li:first-child{
+	padding: 0 20px 0 0;
+}
+.header-top_nav a{
+	color: #3a3f5c;
+}
+.header-bottom_nav a,
+.header-bottom_search a{
+	color: #b9bed2;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+.header-bottom_nav a:hover,
+.header-bottom_search a:hover,
+.header-bottom_nav a.active{
+	color: #3a3f5c;
+	text-decoration: none;
+}
+.li_vline{
+	height: 100%;
+	width: 1px;
+	font-size: 0;
+	background-color: #f6f6f6;
+	padding: 0 !important;
+}
+
+
+/* BUTTONS */
+.button-round{
+	padding: 10px 17px !important;
+	border: 2px solid #e4e7ef;
+	border-radius: 21px;
+	font-size: 13px;
+	text-transform: uppercase;
+	font-weight: 700;
+	cursor: pointer;
+}
+.button-round:hover{
+	text-decoration: none;
+	border: 2px solid #a1a6ba;
+	color: #222328;
+	transition: all 0.3s;
+}
+
+
+/* OTHER */
+.border-right_1_bg{
+	border-right: 1px solid #f6f6f6;
+}
+.cur_edit{
+	cursor: text;
+}
+.cur_pointer{
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
